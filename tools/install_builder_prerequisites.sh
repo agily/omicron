@@ -129,11 +129,11 @@ function install_packages {
       'libclang-dev'
       'libsqlite3-dev'
     )
-    sudo apt-get update
+    apt-get update
     if [[ "${ASSUME_YES}" == "true" ]]; then
-        sudo apt-get install -y "${packages[@]}"
+        apt-get install -y "${packages[@]}"
     else
-        confirm "Install (or update) [${packages[*]}]?" && sudo apt-get install "${packages[@]}"
+        confirm "Install (or update) [${packages[*]}]?" && apt-get install "${packages[@]}"
     fi
   elif [[ "${HOST_OS}" == "SunOS" ]]; then
     CLANGVER=15
